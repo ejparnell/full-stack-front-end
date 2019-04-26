@@ -10,6 +10,15 @@ const getYourPokemon = function () {
     }
   })
 }
+const getYourOnePokemon = function (id) {
+  return $.ajax({
+    url: config.apiUrl + `/bags/${id}`,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 const catchPokemon = function () {
   return $.ajax({
     url: config.apiUrl + `/bags`,
@@ -54,5 +63,6 @@ module.exports = {
   getYourPokemon,
   catchPokemon,
   removePokemon,
-  updatePokemon
+  updatePokemon,
+  getYourOnePokemon
 }

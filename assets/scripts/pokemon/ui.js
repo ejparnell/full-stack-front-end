@@ -32,6 +32,7 @@ const getRandomPokemonSuccess = (response) => {
     <p>Name: ${pokemon.name}</p>
     <p>Type: ${pokemon.breed}</p>
     <p>Rarity: ${pokemon.rarity}</p>
+    <button id="catch-pokemon">Catch this pokemon</button>
     <br>
     `)
   store.monster = response.monster
