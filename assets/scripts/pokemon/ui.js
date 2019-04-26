@@ -1,3 +1,5 @@
+const store = require('../store')
+
 const onGetPokemonSuccess = (response) => {
   response.monsters.forEach(pokemon => {
     $('.poke-message').append(`
@@ -32,6 +34,8 @@ const getRandomPokemonSuccess = (response) => {
     <p>Rarity: ${pokemon.rarity}</p>
     <br>
     `)
+  store.monster = response.monster
+  console.log(`Pokemon id is ${response.monster.id}`)
 }
 
 module.exports = {

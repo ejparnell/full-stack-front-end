@@ -1,6 +1,7 @@
 'use strict'
 const authEvents = require('./auth/events.js')
 const pokeEvents = require('./pokemon/events.js')
+const bagEvents = require('./bag/events.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -10,4 +11,5 @@ const pokeEvents = require('./pokemon/events.js')
 $(() => {
   authEvents.authHandlers()
   pokeEvents.pokeHandler()
+  bagEvents.bagHandler()
 })
