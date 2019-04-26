@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Pokemon</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,50 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Pokemon Game</h1>
+
+      <form id="sign-up">
+    <legend>Sign up!</legend>
+    <input type="text" name="credentials[email]" placeholder="Email">
+    <input type="password" name="credentials[password]" placeholder="Password">
+    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+    <input type="submit" value="Sign up!">
+</form>
+
+<form id="sign-in">
+  <fieldset>
+    <legend>Sign in!</legend>
+    <input type="text" name="credentials[email]" placeholder="Email">
+    <input type="password" name="credentials[password]" placeholder="Password">
+    <input type="submit" value="Sign in!">
+  </fieldset>
+</form>
+
+<form id="sign-out" class="border">
+  <fieldset>
+    <legend>Sign Out!</legend>
+    <input type="submit" value="Sign out!">
+  </fieldset>
+</form>
+
+<form id="change-password">
+  <fieldset>
+    <legend>Change Password!</legend>
+    <input type="password" name="passwords[old]" placeholder="Old Password">
+    <input type="password" name="passwords[new]" placeholder="New Password">
+    <input type="submit" value="Change Password!">
+  </fieldset>
+</form>
+
+<button id="get-all-pokemon">Get all Pokemon</button>
+<form id="get-one-pokemon">
+  <fieldset>
+    <legend>Select one Pokemon</legend>
+      <input type="number" name="monster[id]" placeholder="Number here">
+      <input type="submit" value="Enter">
+  </fieldset>
+</form>
+<button id="get-random">Encounter a Pokemon</button>
+<div class="poke-message"></div>
     </body>
 </html>
