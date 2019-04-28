@@ -32,7 +32,7 @@ const onUpdatePokemon = () => {
 }
 const onBattlePokemon = () => {
   console.log('Ran onBattlePokemon')
-  onGetYourPokemon()
+  api.getYourPokemon()
     .then(ui.getYourPokemonSuccess)
   // ui.battleSuccess()
 }

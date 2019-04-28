@@ -1,1 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
+
+.pokemon-pic {
+  height: 250px;
+  width: 200px;
+}
+
+@font-face {
+  font-family: 'Pokemon';
+  src: url('/assets/styles/fonts/pocket-monk.otf');
+}
+
+@font-face {
+  font-family: 'Pokemon GB';
+  src: url('/assets/styles/fonts/pokemon-gb.ttf');
+}
+
+.header {
+  font-family: 'Pokemon';
+}
+
+body {
+  font-family: 'Pokemon GB';
+}

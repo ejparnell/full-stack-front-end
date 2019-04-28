@@ -3,8 +3,9 @@ const store = require('../store.js')
 const getYourPokemonSuccess = (response) => {
   const bag = response.bags
   bag.forEach(bag => {
-    $('.poke-message').append(`
+    $('.poke-bag').append(`
       <section data-id="${bag.id}">
+      <img src="assets/scripts/pokemon-pics/${bag.monster.name}.jpg" alt="Picture of ${bag.monster.name}" class="pokemon-pic">
       <p>Name: ${bag.monster.name}</p>
       <p>Type: ${bag.monster.breed}</p>
       <p>Rarity: ${bag.monster.rarity}</p>
