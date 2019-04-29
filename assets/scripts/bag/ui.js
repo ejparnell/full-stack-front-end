@@ -22,7 +22,7 @@ const getYourPokemonSuccess = (response) => {
   })
 }
 const failure = () => {
-  console.log('You failed bro!')
+  $('.poke-message').show().html('Something Went Wrong')
 }
 const onCatchPokemonSuccess = (response) => {
   console.log(response)
@@ -44,7 +44,7 @@ const onCatchPokemonSuccess = (response) => {
 }
 const tooManyPokemon = () => {
   console.log('Please relase a pokemon')
-  $('.poke-message').append(`
+  $('.poke-message').show().append(`
     <p>Bag is full</p>
     <p>Would you like to keep this new pokemon?</p>
     <button type="button" class="release-pokemon">Keep Pokemon</button>
@@ -64,7 +64,7 @@ const onUpdatePokemonSuccess = () => {
 }
 const onUpdatePokemonFailure = () => {
   if (store.monster === false) {
-    $('.poke-message').append('You have to encounter a pokemon to update your bag')
+    $('.poke-message').show().append('You have to encounter a pokemon to update your bag')
   }
 }
 const getYourOnePokemonSuccess = (response) => {
@@ -134,7 +134,7 @@ const battleLogic = (wildBreed, choosenBreed) => {
 const relasePokemonSuccess = (response) => {
   const bag = response.bags
   bag.forEach(bag => {
-    $('.poke-bag').append(`
+    $('.poke-bag').show().append(`
       <section data-id="${bag.id}" class="poke-card">
       <img src="assets/scripts/pokemon-pics/${bag.monster.name}.jpg" alt="Picture of ${bag.monster.name}" class="pokemon-pic">
       <p>Name: ${bag.monster.name}</p>
