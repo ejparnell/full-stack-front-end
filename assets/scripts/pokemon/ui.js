@@ -2,6 +2,7 @@ const store = require('../store')
 
 const onGetPokemonSuccess = (response) => {
   hideOthers()
+  $('.pokedex').empty()
   response.monsters.forEach(pokemon => {
     $('.pokedex').show().append(`
       <section class="poke-card">
@@ -20,6 +21,7 @@ const onGetPokemonFailure = () => {
 
 const onGetOnePokemonSuccess = (response) => {
   const pokemon = response.monster
+  $('.poke.message').empty()
   $('.poke-message').html(`
     <p>Name: ${pokemon.name}</p>
     <p>Type: ${pokemon.breed}</p>

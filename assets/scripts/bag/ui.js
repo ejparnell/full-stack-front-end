@@ -8,6 +8,7 @@ const getYourPokemonSuccess = (response) => {
     `)
   $('.poke-bag').empty()
   const bag = response.bags
+  $('.poke-bag').empty()
   bag.forEach(bag => {
     $('.poke-bag').show().append(`
       <section data-id="${bag.id}" class="poke-card">
@@ -27,6 +28,7 @@ const failure = () => {
 const onCatchPokemonSuccess = (response) => {
   console.log(response)
   hideOthers()
+  $('.poke-message').empty()
   const pokemon = response.bag.monster
   $('.poke-message').show().html(`
     <section class="poke-card">
@@ -44,6 +46,7 @@ const onCatchPokemonSuccess = (response) => {
 }
 const tooManyPokemon = () => {
   console.log('Please relase a pokemon')
+  $('.poke-message').empty()
   $('.poke-message').show().append(`
     <p>Bag is full</p>
     <p>Would you like to keep this new pokemon?</p>
@@ -53,6 +56,7 @@ const tooManyPokemon = () => {
 const onUpdatePokemonSuccess = () => {
   $('.poke-bag').hide()
   $('.poke-message').hide()
+  $('.poke-display').empty()
   $('.poke-display').html(`
     <section class="poke-card">
     <img src="public/pokemon-pics/${store.monster.name}.jpg" alt="Picture of ${store.monster.name}" class="pokemon-pic">
@@ -133,6 +137,7 @@ const battleLogic = (wildBreed, choosenBreed) => {
 }
 const relasePokemonSuccess = (response) => {
   const bag = response.bags
+  $('.poke-bag').empty()
   bag.forEach(bag => {
     $('.poke-bag').show().append(`
       <section data-id="${bag.id}" class="poke-card">
@@ -177,6 +182,7 @@ const getYourBattlePokemonSuccess = (response) => {
 }
 const onRemovePokemonSuccess = () => {
   hideOthers()
+  $('.poke-message').empty()
   $('.poke-message').show().html(`<p>You released your Pokemon!</p>`)
   $('.poke-display').html(`
     <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
