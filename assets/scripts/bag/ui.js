@@ -198,6 +198,7 @@ const hideOthers = () => {
   $('.pokedex').hide()
   $('.poke-message').hide()
   $('.poke-bag').hide()
+  $('.poke-message').empty()
 }
 
 module.exports = {
