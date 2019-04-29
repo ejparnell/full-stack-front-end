@@ -7,6 +7,9 @@ const getYourPokemonSuccess = (response) => {
     <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
   $('.poke-bag').empty()
+  if (response.bags.length <= 0) {
+    $('.poke-message').show().append(`You have to caught a pokemon first!`)
+  }
   const bag = response.bags
   $('.poke-bag').empty()
   bag.forEach(bag => {
