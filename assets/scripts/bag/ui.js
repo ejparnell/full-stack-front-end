@@ -8,7 +8,7 @@ const getYourPokemonSuccess = (response) => {
     `)
   $('.poke-bag').empty()
   if (response.bags.length <= 0) {
-    $('.poke-message').show().append(`You have to caught a pokemon first!`)
+    $('.poke-bag').show().append(`<h3>You have to caught a pokemon first!</h3>`)
   }
   const bag = response.bags
   $('.poke-bag').empty()
