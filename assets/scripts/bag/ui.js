@@ -8,7 +8,7 @@ const getYourPokemonSuccess = (response) => {
     `)
   $('.poke-bag').empty()
   if (response.bags.length <= 0) {
-    $('.poke-bag').show().append(`<h3>You have to caught a pokemon first!</h3>`)
+    $('.poke-message').show().append(`<h3>You have to catch a pokemon first!</h3>`)
   }
   const bag = response.bags
   $('.poke-bag').empty()
@@ -169,6 +169,9 @@ const getYourBattlePokemonSuccess = (response) => {
   $('.poke-display').html(`
     <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
+  if (response.bags.length <= 0) {
+    $('.poke-message').show().append(`<h3>You have to catch a pokemon first!</h3>`)
+  }
   const bag = response.bags
   bag.forEach(bag => {
     $('.poke-bag').show().append(`
