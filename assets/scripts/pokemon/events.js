@@ -3,22 +3,22 @@ const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onGetPokemon = () => {
-  console.log('Ran onGetPokemon')
+  // console.log('Ran onGetPokemon')
   api.getPokemon()
     .then(ui.onGetPokemonSuccess)
     .catch(ui.onGetPokemonFailure)
 }
 const onGetOnePokemon = (event) => {
-  console.log('Ran onGetOnePokemon')
+  // console.log('Ran onGetOnePokemon')
   event.preventDefault()
   const id = getFormFields(event.target)
-  console.log(id)
+  // console.log(id)
   api.getOnePokemon(id.monster.id)
     .then(ui.onGetOnePokemonSuccess)
     .catch(ui.onGetOnePokemonFailure)
 }
 const onGetRandomPokemon = () => {
-  console.log('Ran onGetRandomPokemon')
+  // console.log('Ran onGetRandomPokemon')
   const randomNumber = Math.floor(Math.random() * 149) + 1
   api.getRandomPokemon(randomNumber)
     .then(ui.getRandomPokemonSuccess)

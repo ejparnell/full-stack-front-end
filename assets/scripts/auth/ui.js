@@ -2,19 +2,19 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   $('form').trigger('reset')
-  console.log('signUpSuccess ran. Data is :', data)
+  // console.log('signUpSuccess ran. Data is :', data)
   $('#sign-up-modal').hide()
   $('#sign-in-modal').show()
 }
 
 const signUpFailure = function (error) {
   $('form').trigger('reset')
-  console.error('signUpFailure ran. Error is :', error)
+  // console.error('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = function (data) {
   $('form').trigger('reset')
-  console.log('signInSuccess ran. Data is :', data)
+  // console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
   $('#sign-in-modal').hide()
   $('.page-mask').hide()
@@ -22,19 +22,26 @@ const signInSuccess = function (data) {
 
 const signInFailure = function (error) {
   $('form').trigger('reset')
-  console.error('signInFailure ran. Error is :', error)
+  // console.error('signInFailure ran. Error is :', error)
 }
 
 const signOutSuccess = function () {
   $('form').trigger('reset')
-  console.log('signOutSuccess ran and nothing was returned!')
+  // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
+  $('.pokedex').hide()
+  $('.poke-message').hide()
+  $('.poke-bag').hide()
+  $('.page-mask').show()
   $('#sign-in-modal').show()
+  $('.poke-display').html(`
+      <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+      `)
 }
 
 const signOutFailure = function (error) {
   $('form').trigger('reset')
-  console.error('signOutFailure ran. Error is :', error)
+  // console.error('signOutFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = function () {
@@ -45,7 +52,7 @@ const changePasswordSuccess = function () {
 
 const changePasswordFailure = function (error) {
   $('form').trigger('reset')
-  console.error('changePasswordFailure ran. Error is :', error)
+  // console.error('changePasswordFailure ran. Error is :', error)
 }
 
 module.exports = {

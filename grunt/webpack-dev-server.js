@@ -22,7 +22,7 @@ let firstBuild = true
 // port for development server
 const port = 7165
 
-// make `jQuery` and `$` available in the development console
+// make `jQuery` and `$` available in the development // console
 webpackConfig.module.rules.push({
   test: require.resolve('jquery'),
   use: [{

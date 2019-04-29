@@ -26,7 +26,7 @@ const failure = () => {
   $('.poke-message').show().html('Something Went Wrong')
 }
 const onCatchPokemonSuccess = (response) => {
-  console.log(response)
+  // console.log(response)
   hideOthers()
   $('.poke-message').empty()
   const pokemon = response.bag.monster
@@ -45,7 +45,7 @@ const onCatchPokemonSuccess = (response) => {
     `)
 }
 const tooManyPokemon = () => {
-  console.log('Please relase a pokemon')
+  // console.log('Please relase a pokemon')
   $('.poke-message').empty()
   $('.poke-message').show().append(`
     <p>Bag is full</p>
@@ -75,7 +75,7 @@ const getYourOnePokemonSuccess = (response) => {
   hideOthers()
   $('.poke-display').empty()
   const pokemon = response.bag.monster
-  console.log(pokemon)
+  // console.log(pokemon)
   $('.poke-display').show().html(`
     <section class="poke-card">
     <p>You Choose</p>
@@ -88,7 +88,7 @@ const getYourOnePokemonSuccess = (response) => {
     </section>
     `)
   store.choosenPokemon = response.bag.monster
-  console.log(store.choosenPokemon)
+  // console.log(store.choosenPokemon)
 }
 const onRandomBattleSuccess = (response) => {
   hideOthers()
@@ -96,8 +96,8 @@ const onRandomBattleSuccess = (response) => {
   const wildBreed = store.wildPokemon.breed
   const choosenBreed = store.choosenPokemon.breed
   battleLogic(wildBreed, choosenBreed)
-  console.log(`wild pokemon is ${wildBreed}`)
-  console.log(`your pokemon is ${choosenBreed}`)
+  // console.log(`wild pokemon is ${wildBreed}`)
+  // console.log(`your pokemon is ${choosenBreed}`)
   $('.poke-display').show().html(`
     <section class="poke-card">
     <p>Your Pokemon is</p>
@@ -152,7 +152,7 @@ const relasePokemonSuccess = (response) => {
   })
 }
 const checkBagLength = (response) => {
-  console.log(response)
+  // console.log(response)
   if (response.bags.length >= 6) {
     tooManyPokemon()
   } else {

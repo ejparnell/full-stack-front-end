@@ -3,43 +3,43 @@ const ui = require('./ui.js')
 const apiPoke = require('../pokemon/api.js')
 
 const onGetYourPokemon = () => {
-  console.log('Ran onGetYourPokemon')
+  // console.log('Ran onGetYourPokemon')
   api.getYourPokemon()
     .then(ui.getYourPokemonSuccess)
     .catch(ui.failure)
 }
 const onCatchPokemon = () => {
-  console.log('Ran onCatchPokemon')
+  // console.log('Ran onCatchPokemon')
   api.getYourPokemon()
     .then(ui.checkBagLength)
     .catch(ui.failure)
 }
 const onRemovePokemon = () => {
-  console.log('Ran onRemovePokemon')
+  // console.log('Ran onRemovePokemon')
   const id = $(event.target).closest('section').data('id')
-  console.log(`bag id is ${id}`)
+  // console.log(`bag id is ${id}`)
   api.removePokemon(id)
     .then(ui.onRemovePokemonSuccess)
     .catch(ui.failure)
 }
 const onUpdatePokemon = () => {
-  console.log('Ran onUpdatePokemon')
+  // console.log('Ran onUpdatePokemon')
   const id = $(event.target).closest('section').data('id')
-  console.log(`bag id is ${id}`)
+  // console.log(`bag id is ${id}`)
   api.updatePokemon(id)
     .then(ui.onUpdatePokemonSuccess)
     .catch(ui.onUpdatePokemonFailure)
 }
 const onBattlePokemon = () => {
-  console.log('Ran onBattlePokemon')
+  // console.log('Ran onBattlePokemon')
   api.getYourPokemon()
     .then(ui.getYourBattlePokemonSuccess)
     .catch(ui.failure)
 }
 const onChoosePokemon = (event) => {
-  console.log('Ran onChoosePokemon')
+  // console.log('Ran onChoosePokemon')
   const id = $(event.target).closest('section').data('id')
-  console.log(id)
+  // console.log(id)
   api.getYourOnePokemon(id)
     .then(ui.getYourOnePokemonSuccess)
     .catch(ui.failure)
