@@ -4,7 +4,7 @@ const api = require('./api.js')
 const getYourPokemonSuccess = (response) => {
   hideOthers()
   $('.poke-display').html(`
-    <img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+    <img src="full-stack-front-end/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
   $('.poke-bag').empty()
   const bag = response.bags
@@ -39,7 +39,7 @@ const onCatchPokemonSuccess = (response) => {
     <br>
     `)
   $('.poke-display').html(`
-    <img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+    <img src="full-stack-front-end/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
 }
 const tooManyPokemon = () => {
@@ -159,7 +159,7 @@ const getYourBattlePokemonSuccess = (response) => {
   hideOthers()
   $('.poke-bag').empty()
   $('.poke-display').html(`
-    <img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+    <img src="full-stack-front-end/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
   const bag = response.bags
   bag.forEach(bag => {
@@ -179,7 +179,7 @@ const onRemovePokemonSuccess = () => {
   hideOthers()
   $('.poke-message').show().html(`<p>You released your Pokemon!</p>`)
   $('.poke-display').html(`
-    <img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+    <img src="full-stack-front-end/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
 }
 const hideOthers = () => {
