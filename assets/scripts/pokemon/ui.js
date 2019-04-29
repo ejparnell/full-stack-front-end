@@ -5,7 +5,7 @@ const onGetPokemonSuccess = (response) => {
   response.monsters.forEach(pokemon => {
     $('.pokedex').show().append(`
       <section class="poke-card">
-        <img src="assets/scripts/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
+        <img src="public/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
         <p>Name: ${pokemon.name}</p>
         <p>Type: ${pokemon.breed}</p>
         <p>Rarity: ${pokemon.rarity}</p>
@@ -35,7 +35,7 @@ const getRandomPokemonSuccess = (response) => {
   const pokemon = response.monster
   $('.poke-display').html(`
     <div class="pokemon-card">
-    <img src="assets/scripts/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
+    <img src="public/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
     <p>Name: ${pokemon.name}</p>
     <p>Type: ${pokemon.breed}</p>
     <p>Rarity: ${pokemon.rarity}</p>

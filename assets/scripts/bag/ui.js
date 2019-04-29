@@ -4,14 +4,14 @@ const api = require('./api.js')
 const getYourPokemonSuccess = (response) => {
   hideOthers()
   $('.poke-display').html(`
-    <img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+    <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
   $('.poke-bag').empty()
   const bag = response.bags
   bag.forEach(bag => {
     $('.poke-bag').show().append(`
       <section data-id="${bag.id}" class="poke-card">
-      <img src="assets/scripts/pokemon-pics/${bag.monster.name}.jpg" alt="Picture of ${bag.monster.name}" class="pokemon-pic">
+      <img src="public/pokemon-pics/${bag.monster.name}.jpg" alt="Picture of ${bag.monster.name}" class="pokemon-pic">
       <p>Name: ${bag.monster.name}</p>
       <p>Type: ${bag.monster.breed}</p>
       <p>Rarity: ${bag.monster.rarity}</p>
@@ -31,7 +31,7 @@ const onCatchPokemonSuccess = (response) => {
   $('.poke-message').show().html(`
     <section class="poke-card">
     <p>You Caught</p>
-    <img src="assets/scripts/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
+    <img src="public/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
     <p>Name: ${pokemon.name}</p>
     <p>Type: ${pokemon.breed}</p>
     <p>Rarity: ${pokemon.rarity}</p>
@@ -39,7 +39,7 @@ const onCatchPokemonSuccess = (response) => {
     <br>
     `)
   $('.poke-display').html(`
-    <img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+    <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
 }
 const tooManyPokemon = () => {
@@ -55,7 +55,7 @@ const onUpdatePokemonSuccess = () => {
   $('.poke-message').hide()
   $('.poke-display').html(`
     <section class="poke-card">
-    <img src="assets/scripts/pokemon-pics/${store.monster.name}.jpg" alt="Picture of ${store.monster.name}" class="pokemon-pic">
+    <img src="public/pokemon-pics/${store.monster.name}.jpg" alt="Picture of ${store.monster.name}" class="pokemon-pic">
     <p>You just caught ${store.monster.name}</p>
     <button type="button" class="get-your-pokemon">See Your Pokemon</button>
     </section>
@@ -75,7 +75,7 @@ const getYourOnePokemonSuccess = (response) => {
   $('.poke-display').show().html(`
     <section class="poke-card">
     <p>You Choose</p>
-    <img src="assets/scripts/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
+    <img src="public/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
     <p>Name: ${pokemon.name}</p>
     <p>Type: ${pokemon.breed}</p>
     <p>Rarity: ${pokemon.rarity}</p>
@@ -97,7 +97,7 @@ const onRandomBattleSuccess = (response) => {
   $('.poke-display').show().html(`
     <section class="poke-card">
     <p>Your Pokemon is</p>
-    <img src="assets/scripts/pokemon-pics/${store.choosenPokemon.name}.jpg" alt="Picture of ${store.choosenPokemon.name}" class="pokemon-pic">
+    <img src="public/pokemon-pics/${store.choosenPokemon.name}.jpg" alt="Picture of ${store.choosenPokemon.name}" class="pokemon-pic">
     <p>Name: ${store.choosenPokemon.name}</p>
     <p>Type: ${store.choosenPokemon.breed}</p>
     <p>Rarity: ${store.choosenPokemon.rarity}</p>
@@ -105,7 +105,7 @@ const onRandomBattleSuccess = (response) => {
     </br>
     <section class="poke-card">
     <p>You encounter</p>
-    <img src="assets/scripts/pokemon-pics/${store.wildPokemon.name}.jpg" alt="Picture of ${store.wildPokemon.name}" class="pokemon-pic">
+    <img src="public/pokemon-pics/${store.wildPokemon.name}.jpg" alt="Picture of ${store.wildPokemon.name}" class="pokemon-pic">
     <p>Name: ${store.wildPokemon.name}</p>
     <p>Type: ${store.wildPokemon.breed}</p>
     <p>Rarity: ${store.wildPokemon.rarity}</p>
@@ -136,7 +136,7 @@ const relasePokemonSuccess = (response) => {
   bag.forEach(bag => {
     $('.poke-bag').show().append(`
       <section data-id="${bag.id}" class="poke-card">
-      <img src="assets/scripts/pokemon-pics/${bag.monster.name}.jpg" alt="Picture of ${bag.monster.name}" class="pokemon-pic">
+      <img src="public/pokemon-pics/${bag.monster.name}.jpg" alt="Picture of ${bag.monster.name}" class="pokemon-pic">
       <p>Name: ${bag.monster.name}</p>
       <p>Type: ${bag.monster.breed}</p>
       <p>Rarity: ${bag.monster.rarity}</p>
@@ -159,13 +159,13 @@ const getYourBattlePokemonSuccess = (response) => {
   hideOthers()
   $('.poke-bag').empty()
   $('.poke-display').html(`
-    <img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+    <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
   const bag = response.bags
   bag.forEach(bag => {
     $('.poke-bag').show().append(`
       <section data-id="${bag.id}" class="poke-card">
-      <img src="assets/scripts/pokemon-pics/${bag.monster.name}.jpg" alt="Picture of ${bag.monster.name}" class="pokemon-pic">
+      <img src="public/pokemon-pics/${bag.monster.name}.jpg" alt="Picture of ${bag.monster.name}" class="pokemon-pic">
       <p>Name: ${bag.monster.name}</p>
       <p>Type: ${bag.monster.breed}</p>
       <p>Rarity: ${bag.monster.rarity}</p>
@@ -179,7 +179,7 @@ const onRemovePokemonSuccess = () => {
   hideOthers()
   $('.poke-message').show().html(`<p>You released your Pokemon!</p>`)
   $('.poke-display').html(`
-    <img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+    <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
     `)
 }
 const hideOthers = () => {
