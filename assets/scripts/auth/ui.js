@@ -33,6 +33,7 @@ const signOutSuccess = function () {
   $('.poke-message').hide()
   $('.poke-bag').hide()
   $('.page-mask').show()
+  $('.side-bar').width('0%')
   $('#sign-in-modal').show()
   $('.poke-display').html(`
       <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
