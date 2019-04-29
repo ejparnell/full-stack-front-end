@@ -19,7 +19,7 @@ const onGetOnePokemon = (event) => {
 }
 const onGetRandomPokemon = () => {
   console.log('Ran onGetRandomPokemon')
-  const randomNumber = Math.floor(Math.random() * 9) + 1
+  const randomNumber = Math.floor(Math.random() * 149) + 1
   api.getRandomPokemon(randomNumber)
     .then(ui.getRandomPokemonSuccess)
     .catch(ui.onGetOnePokemonFailure)
