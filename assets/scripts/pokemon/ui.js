@@ -1,11 +1,15 @@
 const store = require('../store')
 
 const onGetPokemonSuccess = (response) => {
+  hideOthers()
   response.monsters.forEach(pokemon => {
-    $('.poke-message').append(`
+    $('.pokedex').show().append(`
+      <section class="poke-card">
+        <img src="assets/scripts/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
         <p>Name: ${pokemon.name}</p>
         <p>Type: ${pokemon.breed}</p>
         <p>Rarity: ${pokemon.rarity}</p>
+        </section>
         <br>
     `)
   })
@@ -27,16 +31,25 @@ const onGetOnePokemonFailure = () => {
   console.log('You failed bro!')
 }
 const getRandomPokemonSuccess = (response) => {
+  hideOthers()
   const pokemon = response.monster
-  $('.poke-message').html(`
+  $('.poke-display').html(`
+    <div class="pokemon-card">
+    <img src="assets/scripts/pokemon-pics/${pokemon.name}.jpg" alt="Picture of ${pokemon.name}" class="pokemon-pic">
     <p>Name: ${pokemon.name}</p>
     <p>Type: ${pokemon.breed}</p>
     <p>Rarity: ${pokemon.rarity}</p>
     <button id="catch-pokemon">Catch this pokemon</button>
+    </div>
     <br>
     `)
   store.monster = response.monster
   console.log(`Pokemon id is ${response.monster.id}`)
+}
+const hideOthers = () => {
+  $('.pokedex').hide()
+  $('.poke-message').hide()
+  $('.poke-bag').hide()
 }
 
 module.exports = {

@@ -1,5 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 
+$poke-blue-dark: #363b81;
+$poke-blue-light: #5db9ff;
+$poke-red: #ff1f20;
+$poke-yellow: #fad743;
+$poke-white: #fff;
+$transparent: rgba(0, 0, 0, .5);
+
+
 .pokemon-pic {
   height: 250px;
   width: 200px;
@@ -17,8 +25,99 @@
 
 .header {
   font-family: 'Pokemon';
+  font-size: 5rem;
+  text-align: center;
+  color: $poke-blue-dark;
 }
 
 body {
-  font-family: 'Pokemon GB';
+  font-family: 'Inconsolata', monospace;
+}
+
+.modal-title {
+  font-size: 2rem;
+}
+
+.page-mask {
+  background: $transparent;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.side-bar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: $transparent;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 1rem;
+}
+
+.toggle-side-bar {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.nav-btn {
+  margin: 1.5rem;
+}
+
+.close-nav {
+  color: $poke-red;
+  margin: 1.5rem;
+}
+
+.poke-display {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem;
+}
+
+.poke-controls {
+  display: flex;
+  justify-content: space-around;
+  margin: .5rem;
+}
+
+.encounter-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 20px
+}
+
+.poke-message {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1.5rem;
+}
+
+.poke-bag {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.poke-card {
+  width: 33%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokedex {
+  display: flex;
+  flex-wrap: wrap;
 }

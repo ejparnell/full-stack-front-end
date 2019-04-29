@@ -6,63 +6,143 @@
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+      <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
       <h1 class="header">Pokemon Game</h1>
-
-      <!--Sign Up-->
-      <form id="sign-up">
-    <legend>Sign up!</legend>
-    <input type="text" name="credentials[email]" placeholder="Email">
-    <input type="password" name="credentials[password]" placeholder="Password">
-    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-    <input type="submit" value="Sign up!">
+      <!--Page Mask for modal sign in and out-->
+<div class="page-mask"></div>
+<!--Sign in modal-->
+      <div id="sign-in-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign In</h5>
+      <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+      </div>
+      <div class="modal-body">
+        <form id="sign-in">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]">
+    <small class="form-text text-muted">Don't use real emails or password!</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-<!--Sign In-->
-<form id="sign-in">
-  <fieldset>
-    <legend>Sign in!</legend>
-    <input type="text" name="credentials[email]" placeholder="Email">
-    <input type="password" name="credentials[password]" placeholder="Password">
-    <input type="submit" value="Sign in!">
-  </fieldset>
+      </div>
+      <div class="modal-footer">
+        <button id="sign-up-toggle" type="button" class="btn btn-dark">Sign Up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Sign up modal-->
+<div id="sign-up-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sign Up</h5>
+      <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>-->
+      </div>
+      <div class="modal-body">
+        <form>
+  <div class="form-group" id="sign-up">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"  name="credentials[email]">
+    <small class="form-text text-muted">Don't use real emails for password!</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password Confirmation</label>
+    <input type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+      </div>
+      <div class="modal-footer">
+        <button id="sign-in-toggle" type="button" class="btn btn-dark">Sign In</button>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!--Nav side bar-->
+<i class="fas fa-bars toggle-side-bar fa-3x"></i>
+<div id="side-bar" class="side-bar">
+  <i class="fas fa-times close-nav fa-3x"></i>
+  <form id="sign-out">
+      <input class="btn btn-outline-warning nav-btn" type="submit" value="Sign out" />
+    </form>
+  <button id="change-password-toggle" type="button" class="btn btn-outline-warning nav-btn">Change Password</button>
+</div>
 
+<!--Change Password modal-->
+<div id="change-password-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Change Password</h5>
+        <button type="button" class="close close-change-password" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="change-password">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Old Password</label>
+            <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="passwords[old]">
+            <small class="form-text text-muted">Please don't use real passwords.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">New Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwords[new]">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
-<form id="sign-out" class="border">
-  <fieldset>
-    <legend>Sign Out!</legend>
-    <input type="submit" value="Sign out!">
-  </fieldset>
-</form>
+<div class="encounter-btn">
+<button id="get-random">Encounter a Pokemon</button>
+</div>
 
-<form id="change-password">
-  <fieldset>
-    <legend>Change Password!</legend>
-    <input type="password" name="passwords[old]" placeholder="Old Password">
-    <input type="password" name="passwords[new]" placeholder="New Password">
-    <input type="submit" value="Change Password!">
-  </fieldset>
-</form>
-<div id="after-listen" class="after-listen">
+<div class="poke-display">
+<img src="/assets/scripts/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+</div>
+
+<div class="poke-controls">
 <button id="get-all-pokemon">Get all Pokemon</button>
 <button id="get-your-pokemon">Get your Pokemon</button>
 <button id="battle-pokemon">Battle pokemon</button>
 </div>
-<form id="get-one-pokemon">
+<!--<form id="get-one-pokemon">
   <fieldset>
     <legend>Select one Pokemon</legend>
       <input type="number" name="monster[id]" placeholder="Number here">
       <input type="submit" value="Enter">
   </fieldset>
-</form>
-<button id="get-random">Encounter a Pokemon</button>
+</form> -->
+
 <div class="poke-message"></div>
 <div class="poke-bag"></div>
+<div class="pokedex"></div>
     </body>
 </html>
