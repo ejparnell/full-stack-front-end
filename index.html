@@ -30,12 +30,12 @@
         <form id="sign-in">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]">
+    <input required type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]">
     <small class="form-text text-muted">Don't use real emails or password!</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
+    <input required type="password" class="form-control" placeholder="Password" name="credentials[password]">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -61,16 +61,16 @@
         <form>
   <div class="form-group" id="sign-up">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"  name="credentials[email]">
+    <input required type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"  name="credentials[email]">
     <small class="form-text text-muted">Don't use real emails for password!</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" placeholder="Password" name="credentials[password]">
+    <input required type="password" class="form-control" placeholder="Password" name="credentials[password]">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password Confirmation</label>
-    <input type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]">
+    <input required type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]">
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -106,12 +106,12 @@
         <form id="change-password">
           <div class="form-group">
             <label for="exampleInputEmail1">Old Password</label>
-            <input type="password" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="passwords[old]">
+            <input required type="password" class="form-control" aria-describedby="emailHelp" placeholder="Old Password" name="passwords[old]">
             <small class="form-text text-muted">Please don't use real passwords.</small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">New Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwords[new]">
+            <input required type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" name="passwords[new]">
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
