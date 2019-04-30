@@ -22,7 +22,7 @@ const onGetRandomPokemon = () => {
       .then(ui.getRandomPokemonSuccess)
       .catch(ui.onGetOnePokemonFailure)
   } else {
-    $('.poke-message').text('You encounter nothing today.')
+    $('.poke-message').show().text('You encounter nothing today.')
   }
 }
 
