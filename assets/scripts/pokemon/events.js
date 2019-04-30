@@ -23,6 +23,9 @@ const onGetRandomPokemon = () => {
       .catch(ui.onGetOnePokemonFailure)
   } else {
     $('.poke-message').show().text('You encounter nothing today.')
+    $('.poke-display').html(`
+      <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
+      `)
   }
 }
 
