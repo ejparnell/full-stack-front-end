@@ -3,26 +3,27 @@ const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onGetPokemon = () => {
-  // console.log('Ran onGetPokemon')
   api.getPokemon()
     .then(ui.onGetPokemonSuccess)
     .catch(ui.onGetPokemonFailure)
 }
 const onGetOnePokemon = (event) => {
-  // console.log('Ran onGetOnePokemon')
   event.preventDefault()
   const id = getFormFields(event.target)
-  // console.log(id)
   api.getOnePokemon(id.monster.id)
     .then(ui.onGetOnePokemonSuccess)
     .catch(ui.onGetOnePokemonFailure)
 }
 const onGetRandomPokemon = () => {
-  // console.log('Ran onGetRandomPokemon')
-  const randomNumber = Math.floor(Math.random() * 149) + 1
-  api.getRandomPokemon(randomNumber)
-    .then(ui.getRandomPokemonSuccess)
-    .catch(ui.onGetOnePokemonFailure)
+  const randomEncouterNumber = Math.floor(Math.random() * 10) + 1
+  if (randomEncouterNumber >= 6) {
+    const randomPokemonNumber = Math.floor(Math.random() * 149) + 1
+    api.getRandomPokemon(randomPokemonNumber)
+      .then(ui.getRandomPokemonSuccess)
+      .catch(ui.onGetOnePokemonFailure)
+  } else {
+    $('.poke-message').text('You encounter nothing today.')
+  }
 }
 
 const pokeHandler = () => {

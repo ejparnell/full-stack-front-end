@@ -16,7 +16,7 @@ const onGetPokemonSuccess = (response) => {
   })
 }
 const onGetPokemonFailure = () => {
-  // console.log('You failed bro!')
+  $('.poke-message').text('Something went wrong!')
 }
 
 const onGetOnePokemonSuccess = (response) => {
@@ -30,7 +30,7 @@ const onGetOnePokemonSuccess = (response) => {
     `)
 }
 const onGetOnePokemonFailure = () => {
-  // console.log('You failed bro!')
+  $('.poke-message').text('Something went wrong!')
 }
 const getRandomPokemonSuccess = (response) => {
   hideOthers()
@@ -46,7 +46,6 @@ const getRandomPokemonSuccess = (response) => {
     <br>
     `)
   store.monster = response.monster
-  // console.log(`Pokemon id is ${response.monster.id}`)
 }
 const hideOthers = () => {
   $('.pokedex').hide()

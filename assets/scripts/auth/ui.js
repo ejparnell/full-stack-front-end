@@ -2,32 +2,31 @@ const store = require('../store')
 
 const signUpSuccess = function (data) {
   $('form').trigger('reset')
-  // console.log('signUpSuccess ran. Data is :', data)
   $('#sign-up-modal').hide()
   $('#sign-in-modal').show()
+  $('.welcome-sign-in').text('Success now Sign In!')
 }
 
-const signUpFailure = function (error) {
+const signUpFailure = function () {
   $('form').trigger('reset')
-  // console.error('signUpFailure ran. Error is :', error)
+  $('.welcome-sign-up').text('Please try again')
 }
 
 const signInSuccess = function (data) {
   $('form').trigger('reset')
-  // console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
   $('#sign-in-modal').hide()
   $('.page-mask').hide()
+  $('.poke-message').text(`Welcome ${store.user.email}`)
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('form').trigger('reset')
-  // console.error('signInFailure ran. Error is :', error)
+  $('.welcome-sign-in').text('Please try again')
 }
 
 const signOutSuccess = function () {
   $('form').trigger('reset')
-  // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
   $('.pokedex').hide()
   $('.poke-message').hide()
@@ -40,9 +39,9 @@ const signOutSuccess = function () {
       `)
 }
 
-const signOutFailure = function (error) {
+const signOutFailure = function () {
   $('form').trigger('reset')
-  // console.error('signOutFailure ran. Error is :', error)
+  $('.poke-message').text(`Please try again`)
 }
 
 const changePasswordSuccess = function () {
@@ -51,9 +50,9 @@ const changePasswordSuccess = function () {
   $('#change-password-modal').hide()
 }
 
-const changePasswordFailure = function (error) {
+const changePasswordFailure = function () {
   $('form').trigger('reset')
-  // console.error('changePasswordFailure ran. Error is :', error)
+  $('.poke-message').text(`Please try again`)
 }
 
 module.exports = {

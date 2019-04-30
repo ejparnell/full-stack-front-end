@@ -1,148 +1,138 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Pokemon</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-      <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1 class="header">Pokemon Game</h1>
-      <!--Page Mask for modal sign in and out-->
-<div class="page-mask"></div>
-<!--Sign in modal-->
-      <div id="sign-in-modal" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Sign In</h5>
-      <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>-->
-      </div>
-      <div class="modal-body">
-        <form id="sign-in">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input required type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]">
-    <small class="form-text text-muted">Don't use real emails or password!</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input required type="password" class="form-control" placeholder="Password" name="credentials[password]">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-      </div>
-      <div class="modal-footer">
-        <button id="sign-up-toggle" type="button" class="btn btn-dark">Sign Up</button>
+<head>
+  <title>Pokemon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <h1 class="header">Pokemon Game</h1>
+  <!--Page Mask for modal sign in and out-->
+  <div class="page-mask"></div>
+  <!--Sign in modal-->
+  <div id="sign-in-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title welcome-sign-in">Sign In</h5>
+        </div>
+        <div class="modal-body">
+          <form id="sign-in">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input required type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]">
+              <small class="form-text text-muted">Don't use real emails or password!</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input required type="password" class="form-control" placeholder="Password" name="credentials[password]">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="sign-up-toggle" type="button" class="btn btn-dark">Sign Up</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!--Sign up modal-->
-<div id="sign-up-modal" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Sign Up</h5>
-      <!--  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>-->
-      </div>
-      <div class="modal-body">
-        <form id="sign-up">
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input required type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email"  name="credentials[email]">
-    <small class="form-text text-muted">Don't use real emails for password!</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input required type="password" class="form-control" placeholder="Password" name="credentials[password]">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password Confirmation</label>
-    <input required type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-      </div>
-      <div class="modal-footer">
-        <button id="sign-in-toggle" type="button" class="btn btn-dark">Sign In</button>
+  <!--Sign up modal-->
+  <div id="sign-up-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title welcome-sign-up">Sign Up</h5>
+        </div>
+        <div class="modal-body">
+          <form id="sign-up">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input required type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="credentials[email]">
+              <small class="form-text text-muted">Don't use real emails for password!</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input required type="password" class="form-control" placeholder="Password" name="credentials[password]">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password Confirmation</label>
+              <input required type="password" class="form-control" placeholder="Password" name="credentials[password_confirmation]">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button id="sign-in-toggle" type="button" class="btn btn-dark">Sign In</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<!--Nav side bar-->
-<i class="fas fa-bars toggle-side-bar fa-3x"></i>
-<div id="side-bar" class="side-bar">
-  <i class="fas fa-times close-nav fa-3x"></i>
-  <form id="sign-out">
+  <!--Nav side bar-->
+  <i class="fas fa-bars toggle-side-bar fa-3x"></i>
+  <div id="side-bar" class="side-bar">
+    <i class="fas fa-times close-nav fa-3x"></i>
+    <form id="sign-out">
       <input class="btn btn-outline-warning nav-btn" type="submit" value="Sign out" />
     </form>
-  <button id="change-password-toggle" type="button" class="btn btn-outline-warning nav-btn">Change Password</button>
-</div>
+    <button id="change-password-toggle" type="button" class="btn btn-outline-warning nav-btn">Change Password</button>
+  </div>
 
-<!--Change Password modal-->
-<div id="change-password-modal" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Change Password</h5>
-        <button type="button" class="close close-change-password" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="change-password">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Old Password</label>
-            <input required type="password" class="form-control" aria-describedby="emailHelp" placeholder="Old Password" name="passwords[old]">
-            <small class="form-text text-muted">Please don't use real passwords.</small>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">New Password</label>
-            <input required type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" name="passwords[new]">
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+  <!--Change Password modal-->
+  <div id="change-password-modal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Change Password</h5>
+          <button type="button" class="close close-change-password" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="change-password">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Old Password</label>
+              <input required type="password" class="form-control" aria-describedby="emailHelp" placeholder="Old Password" name="passwords[old]">
+              <small class="form-text text-muted">Please don't use real passwords.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">New Password</label>
+              <input required type="password" class="form-control" id="exampleInputPassword1" placeholder="New Password" name="passwords[new]">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="encounter-btn">
-<button id="get-random">Encounter a Pokemon</button>
-</div>
+  <div class="encounter-btn">
+    <button id="get-random">Encounter a Pokemon</button>
+  </div>
 
-<div class="poke-display">
-<img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture" >
-</div>
+  <div class="poke-display">
+    <img src="public/pokemon-pics/Pokeball.png" alt="Pokeball picture">
+  </div>
 
-<div class="poke-controls">
-<button id="get-all-pokemon">Get all Pokemon</button>
-<button id="get-your-pokemon">Get your Pokemon</button>
-<button id="battle-pokemon">Battle pokemon</button>
-</div>
-<!--<form id="get-one-pokemon">
-  <fieldset>
-    <legend>Select one Pokemon</legend>
-      <input type="number" name="monster[id]" placeholder="Number here">
-      <input type="submit" value="Enter">
-  </fieldset>
-</form> -->
+  <div class="poke-controls">
+    <button id="get-all-pokemon">Get all Pokemon</button>
+    <button id="get-your-pokemon">Get your Pokemon</button>
+    <button id="battle-pokemon">Battle pokemon</button>
+  </div>
 
-<div class="poke-message"></div>
-<div class="poke-bag"></div>
-<div class="pokedex"></div>
-    </body>
+  <div class="poke-message"></div>
+  <div class="poke-bag"></div>
+  <div class="pokedex"></div>
+</body>
+
 </html>
