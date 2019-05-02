@@ -94,6 +94,9 @@ const onRandomBattleSuccess = (response) => {
   store.wildPokemon = response.monster
   const wildBreed = store.wildPokemon.breed
   const choosenBreed = store.choosenPokemon.breed
+  if (store.choosenPokemon.name === 'Cheesemon') {
+    $('.poke-message').show().html(`<h3>Cheesemon Always Wins!!!</h3>`)
+  }
   battleLogic(wildBreed, choosenBreed)
   $('.poke-display').show().html(`
     <section class="poke-card">

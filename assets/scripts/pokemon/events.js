@@ -17,7 +17,7 @@ const onGetOnePokemon = (event) => {
 const onGetRandomPokemon = () => {
   const randomEncouterNumber = Math.floor(Math.random() * 10) + 1
   if (randomEncouterNumber >= 6) {
-    const randomPokemonNumber = Math.floor(Math.random() * 149) + 1
+    const randomPokemonNumber = Math.floor(Math.random() * 150) + 1
     api.getRandomPokemon(randomPokemonNumber)
       .then(ui.getRandomPokemonSuccess)
       .catch(ui.onGetOnePokemonFailure)
